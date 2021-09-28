@@ -7,8 +7,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Disabled;
+
 
 class HelloSeleniumFacebook{
+	
+	@Test
+	void checkFacebookTitle() {
+        System.setProperty("webdriver.gecko.driver","G:\\drivers\\geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
+        String baseUrl = "http://www.facebook.com";
+        driver.get(baseUrl);
+        System.out.println(driver.getTitle());
+        assertEquals("Facebook – log in or sign up", driver.getTitle());
+        driver.close();
+	}
 
     @Test
     void checkFacebookEmailInput(){
