@@ -19,7 +19,7 @@ class HelloSeleniumFacebook{
         String baseUrl = "http://www.facebook.com";
         driver.get(baseUrl);
         System.out.println(driver.getTitle());
-        assertEquals("Facebook – log in or sign up", driver.getTitle());
+        assertEquals("Facebook â€“ log in or sign up", driver.getTitle());
         driver.close();
 	}
 
