@@ -18,7 +18,7 @@ import java.util.List;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 
 // Update this class name by replacing S3214321 with your student ID
-class MyPetstoreDemo_S3214321 {
+class MyPetstoreDemoW11_S3214321 {
     WebDriver myDriver;
 
     @Test
@@ -69,7 +69,8 @@ class MyPetstoreDemo_S3214321 {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        fail("Task 11.1 : Check that the price is $125.50 using JUnit assertEquals");
+        // Write the tests for these below using JUnit assertEquals and the findElements method
+        fail("Task 11.1 : Check that the price is $125.50");
         fail("Task 11.2 : Check that the product name is correct (Adult Male Chihuahua) for this product page");
         fail("Task 11.3 Check that the adult male chihuahua is in stock. ( > 0 )");
 
@@ -83,6 +84,7 @@ class MyPetstoreDemo_S3214321 {
     @DisplayName("Check Price for another pet you might like to own at product page")
     void checkAnotherPet() {
 
+        // Write the tests for these below using JUnit assertEquals and the findElements method
         fail("Task 11.4 : Check that the price is ??? using JUnit assertEquals");
         fail("Task 11.5 : Check that the product name is correct (???) for this product page");
         fail("Task 11.6 Check that the ??? is in stock. ( > 0 )");
@@ -95,8 +97,6 @@ class MyPetstoreDemo_S3214321 {
 
         String chihuahuaURL = "https://petstore.octoperf.com/actions/Catalog.action?viewItem=&itemId=EST-26";
         myDriver.get(chihuahuaURL);
-
-
 
         /**
          * If you have time you can look further with this below.
@@ -118,16 +118,15 @@ class MyPetstoreDemo_S3214321 {
     }
 
     @Test
-    @Disabled
+    // @Disabled
     @Order(0)
     @DisplayName("Sanity test only")
      void sanityTest1(){
-
+        // When this passes I know I have the webdriver and Junit set up correctly
         String petStoreURL = "https://petstore.octoperf.com";
         myDriver.get(petStoreURL);
         assertEquals("JPetStore Demo", myDriver.getTitle());
     }
-
 
     @BeforeEach
     void setUp() {
