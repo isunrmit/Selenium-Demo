@@ -14,4 +14,3 @@ buildNumber.properties
 .idea/runConfigurations.xml
 .idea/uiDesigner.xml
 .idea/vcs.xml
-*.exe
