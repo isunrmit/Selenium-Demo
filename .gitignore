@@ -8,3 +8,10 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/runConfigurations.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+*.exe
