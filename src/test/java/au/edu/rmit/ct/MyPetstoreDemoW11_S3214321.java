@@ -56,14 +56,14 @@ class MyPetstoreDemoW11_S3214321 {
 
         List<WebElement> lweTD = myDriver.findElements(By.tagName("td"));
         System.out.println("Printing text from <td> elements:");
-        for (WebElement wea : lweTD){
+        for (WebElement wea : lweTD){ // each of this are td WebElements
             System.out.print(wea.getText() + ", ");
         }
 
         // Thread.sleep() is not normally encouraged, but is a quick way to pause browser
-        // When you are processing a webpage with Selenium, if the webpage doesnt' load fast enough
+        // When you are processing a webpage with Selenium, if the webpage doesn't load fast enough
         // an exception can be thrown unless you put in some wait time.
-        // There are more official ways to handle wait time - we will look at that next weeek.
+        // There are more official ways to handle wait time - we will look at that next week.
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -75,7 +75,7 @@ class MyPetstoreDemoW11_S3214321 {
         fail("Task 11.3 Check that the adult male chihuahua is in stock. ( > 0 )");
 
         /**
-         * You will be ask to submit this for your Assignment 3 as well as for other products.
+         * You will be asked to submit this for your Assignment 3 .
          */
     }
 
@@ -88,6 +88,10 @@ class MyPetstoreDemoW11_S3214321 {
         fail("Task 11.4 : Check that the price is ??? using JUnit assertEquals");
         fail("Task 11.5 : Check that the product name is correct (???) for this product page");
         fail("Task 11.6 Check that the ??? is in stock. ( > 0 )");
+
+        /**
+         * You will be asked to submit this for your Assignment 3 .
+         */
     }
 
     @Test
@@ -107,13 +111,17 @@ class MyPetstoreDemoW11_S3214321 {
         WebElement we;
         // Here we are using * to check all elements for their enclosed value
         // <p>Like the value here</p>
-        // In this example we are searching only for any *  elements, which contains a particular string value
+
+        // In this example we are searching only for td elements, which has exact text value
+        we = myDriver.findElement(By.xpath("//td[text()='$125.50']"));
+
+        // In this example we are searching only for any elements, which contains a particular string value
+        // (like a substring match)
          we = myDriver.findElement(By.xpath("//*[contains(text(),'$125')]"));
 
          System.out.println("we.toString(): " + we.toString()); // see what it looks like toString()
          System.out.println("we.toString(): " + we.getText()); // see what the text is
-        // In this example we are searching only for td elements, which has exact text value
-         we = myDriver.findElement(By.xpath("//td[text()='$125.50']"));
+
 
     }
 
