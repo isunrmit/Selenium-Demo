@@ -1,5 +1,5 @@
 /**
- *  This will be used for W11 Demo as well as part of Assignment Submission
+ *  This will be used for W11 Demo
  *  Background reading for DOM:
  *  https://www.w3.org/TR/REC-DOM-Level-1/introduction.html
  *  https://www.w3schools.com/js/js_htmldom.asp
@@ -43,7 +43,7 @@ class MyPetstoreDemoW11_S3214321 {
         // see the getAttribute("href") method which is used by toString() to read the url
 
         List<WebElement> lweA = myDriver.findElements(By.tagName("a"));
-        System.out.print("Printing text from <a> elements:");
+        System.out.println("Printing text from <a> elements:");
         for (WebElement wea : lweA){
             System.out.print(wea.getText() + ",");
         }
@@ -120,7 +120,7 @@ class MyPetstoreDemoW11_S3214321 {
          we = myDriver.findElement(By.xpath("//*[contains(text(),'$125')]"));
 
          System.out.println("we.toString(): " + we.toString()); // see what it looks like toString()
-         System.out.println("we.toString(): " + we.getText()); // see what the text is
+         System.out.println("we.getText(): " + we.getText()); // see what the text is
 
 
     }
