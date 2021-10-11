@@ -1,3 +1,10 @@
+# Selenium W12 Demo
+
+Login - authentication fail
+
+Mary buys an Iguana, and pays for it
+ 
+ 
 # Selenium W11 Demo
 Petstore Demo task to check price, product name of Adult Male Chihuahua
 
