@@ -1,8 +1,8 @@
 # Selenium W12 Demo
 
-Login - authentication fail
+Petstore Login - authentication fail
 
-Mary buys an Iguana, and pays for it
+Petstore Demo - Mary buys an Iguana, and pays for it
  
  
 # Selenium W11 Demo
