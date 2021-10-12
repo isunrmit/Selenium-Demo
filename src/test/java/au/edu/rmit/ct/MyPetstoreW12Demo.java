@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -69,8 +70,35 @@ class MyPetstoreW12Demo {
         //  with each session.
         // assertNotNull(myDriver.findElement(By.id("stripes-2052562751")), "id Content not found");
     }
+    @Test
+    @Order(1)
+    @DisplayName("Check authentication, the wrong username/password")
+    void test02()  {
+        String petstore = "https://petstore.octoperf.com/actions/Account.action?signonForm=";
+        myDriver.get(petstore);
+        myDriver.findElement(By.name("username")).sendKeys("Testing1234"); // Enter my user name
+        myDriver.findElement(By.name("password")).clear();	// Enter my password
+        myDriver.findElement(By.name("password")).sendKeys("Testing1234");	// Enter my password
+        myDriver.findElement(By.name("signon")).click(); // Click to login
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        /*
+         * <div id="Content"><ul class="messages"><li>Invalid username or password.  Signon failed.</li></ul>
+         * <div id="Catalog"><form method="post" action="/actions/Account.action">
+         * <p>Please enter your username and password.</p>
+         * <p>Username:<input name="username" id="stripes-2052562751" type="text"><script type="text/javascript">setTimeout(function(){try{var z=document.getElementById('stripes-2052562751');z.focus();z.select();}catch(e){}},1);</script> <br>
+         * Password:<input name="password" type="password" value="j2ee"></p>
+         * <input name="signon" type="submit" value="Login">
+         */
 
+        assertNotNull(myDriver.findElement(By.id("Content")), "id Content not found");
+        assertNotNull(myDriver.findElement(By.xpath("//div[@id='Content']")) );
+
+    }
     @Test
     @Order(2)
     @DisplayName("Mary gets Order number after Buying Iguana ")
@@ -107,7 +135,7 @@ class MyPetstoreW12Demo {
         myDriver.get("https://petstore.octoperf.com/actions/Cart.action?viewCart=");
         we = myDriver.findElement(By.xpath("//*[contains(text(),'Sub Total')]"));
         // System.out.println(we.getText());
-        //  assertEquals("Sub Total: $125.50",we.getText() );
+        assertEquals("Sub Total: $18.50",we.getText() );
 
         myDriver.findElement(By.xpath("//a[contains(text(),'Proceed to Checkout')]")).click();
 
@@ -116,9 +144,9 @@ class MyPetstoreW12Demo {
         myDriver.findElement(By.xpath("//a[text()='Confirm']")).click();
 
         WebElement finalWe = myDriver.findElement(By.xpath("//*[contains(text(),'Order #')]"));
-        // assertNotNull(finalWe, "text");
+        assertNotNull(finalWe, "Not found order number");
         System.out.println("Mary's order successful: " + finalWe.getText());
-        Thread.sleep(4000);
+        // Thread.sleep(2000);
     }
 
     @Test
