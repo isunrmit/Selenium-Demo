@@ -3,42 +3,74 @@ package au.edu.rmit.ct;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Disabled;
 
-
 class HelloSeleniumFacebook{
-	
-	@Test
-	void checkFacebookTitle() {
-        System.setProperty("webdriver.gecko.driver","G:\\drivers\\geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
+
+    @Test
+    void checkFacebookTitle() {
+
+        // Step 1. Set system property for either chrome driver or gecko driver (for Firefox browser)
+        System.setProperty("webdriver.gecko.driver","H:\\drivers\\geckodriver.exe");
+
+        // Step 2. Instantiate the Web Driver as your driver
+        WebDriver myDriver = new FirefoxDriver();
+
+        // Step 3. name the url you want to test.
         String baseUrl = "http://www.facebook.com";
-        driver.get(baseUrl);
-        System.out.println(driver.getTitle());
-        assertEquals("Facebook – log in or sign up", driver.getTitle());
-        driver.close();
-	}
+
+        // Step 4. Direct your driver
+        myDriver.get(baseUrl);
+
+        // Step 5. use Junit assertions to make sure you have the right page
+        assertEquals("Facebook – log in or sign up", myDriver.getTitle());
+
+        // Step 6. Finally close your session.
+        myDriver.close();
+    }
 
     @Test
     void checkFacebookEmailInput(){
-    	
-    	// Of course G:\\drivers\\geckodriver.exe should be replaced with
+
+        // Of course G:\\drivers\\geckodriver.exe should be replaced with
         // the url of where you stored this.
+        // Step 1. Set system property for either chrome driver or gecko driver (for Firefox browser)
+        System.setProperty("webdriver.chrome.driver","H:\\drivers\\chromedriver.exe");
 
-        System.setProperty("webdriver.gecko.driver","G:\\drivers\\geckodriver.exe");
-        WebDriver driver = new FirefoxDriver();
+        // Step 2. Instantiate the Web Driver as your driver
+
+        WebDriver myDriver = new ChromeDriver();
+
+        // Step 3. name the url you want to test.
         String baseUrl = "http://www.facebook.com";
-        String tagName = "";
 
-        driver.get(baseUrl);
-        tagName = driver.findElement(By.id("email")).getTagName();
-        System.out.println(tagName);
-        driver.close();
+        // Step 4. Direct your driver
+        myDriver.get(baseUrl);
+        String tagName = myDriver.findElement(By.id("email")).getTagName();
+
+        // Step 5. use Junit assertions to make sure you have the right page
         assertEquals("input", tagName);
+
+
+        // Step 6. Finally close your session. But we want to pause for 3 seconds first
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        myDriver.close();
+
+
+
+
+
+
     }
 
 }

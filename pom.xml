@@ -1,45 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>w10demo</groupId>
-  <artifactId>w10demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-   <dependencies>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>SeleniumDemo</groupId>
+    <artifactId>RMITSeleniumdDemo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.2</version>
+            <version>5.9.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.2</version>
+            <version>5.9.0</version>
             <scope>test</scope>
         </dependency>
-       <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
-       <dependency>
-           <groupId>org.seleniumhq.selenium</groupId>
-           <artifactId>selenium-chrome-driver</artifactId>
-           <version>3.141.59</version>
-       </dependency>
-       <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
-       <dependency>
-           <groupId>org.seleniumhq.selenium</groupId>
-           <artifactId>selenium-firefox-driver</artifactId>
-           <version>3.141.59</version>
-       </dependency>
-       <dependency>
-           <groupId>org.seleniumhq.selenium</groupId>
-           <artifactId>selenium-support</artifactId>
-           <version>4.0.0-beta-4</version>
-       </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>4.4.0</version>
+        </dependency>
 
 
-   </dependencies>
+    </dependencies>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
     </properties>
 </project>
