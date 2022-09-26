@@ -8,7 +8,8 @@ NOTE 1: If you use chrome, the POM file of the demo should also be updated with 
 NOTE 2: Using chrome requires a [few more steps](https://www.selenium.dev/documentation/getting_started/installing_browser_drivers/).
 
 Clone this repository or download and extract zip file of Selenium demo project to your own directory
-Ensure the directory location to the gecko file is corrected in the Junit test case
+Ensure the directory location to the gecko file is corrected in the Junit test case.
+
 Run Junit testcases.
 * We are checking for the webpage title.
 * We are checking for the input tag
