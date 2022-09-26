@@ -15,7 +15,7 @@ class HelloSeleniumFacebook{
     @Test
     void checkFacebookTitle() {
 
-        // Step 1. Set system property for either chrome driver (for Chrome browser) or gecko driver (for Firefox browser)
+        // Step 1. Set system property for either chrome driver (for Chrome browser ) or gecko driver (for Firefox browser)
         System.setProperty("webdriver.gecko.driver","H:\\drivers\\geckodriver.exe");
 
         // Step 2. Instantiate the Web Driver as your driver
