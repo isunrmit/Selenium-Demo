@@ -1,7 +1,6 @@
 package au.edu.rmit.ct;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,11 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Disabled;
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class HelloSeleniumFacebook{
 
+
     @Test
+    @Order(1)
     @DisplayName("Use Firefox Web Driver to check retrieval of Facebook Homepage")
     void checkFacebookTitle() {
 
@@ -37,6 +37,7 @@ class HelloSeleniumFacebook{
     }
 
     @Test
+    @Order(2)
     @DisplayName("Use Chrome Web Driver to check email input field of Facebook page")
     void checkFacebookEmailInput(){
 
