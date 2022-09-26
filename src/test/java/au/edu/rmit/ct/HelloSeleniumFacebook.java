@@ -1,5 +1,6 @@
 package au.edu.rmit.ct;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.Disabled;
 class HelloSeleniumFacebook{
 
     @Test
+    @DisplayName("Use Firefox Web Driver to check retrieval of Facebook Homepage")
     void checkFacebookTitle() {
 
         // Step 1. Set system property for either chrome driver (for Chrome browser ) or gecko driver (for Firefox browser)
@@ -35,6 +37,7 @@ class HelloSeleniumFacebook{
     }
 
     @Test
+    @DisplayName("Use Chrome Web Driver to check email input field of Facebook page")
     void checkFacebookEmailInput(){
 
         // Of course G:\\drivers\\geckodriver.exe should be replaced with
