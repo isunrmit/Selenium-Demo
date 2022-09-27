@@ -102,10 +102,15 @@ class HelloSeleniumFacebook{
         String nonExistingAttributeValue = aButton.getAttribute("type");
         System.out.println("Value of type attribute: "+nonExistingAttributeValue);
 
-        fail("Check if aButton is the right Button before we click it");
+        // fail("Check if aButton is the right Button before we click it");
 
         // This is how you click the button. But should we do more checks that it's the right button before we do this?
         aButton.click();
+
+        // Check the title of the results page. Is this what you would expect? If it isn't, how would you fix this?
+        System.out.println(myDriver.getTitle());
+
+        fail("Use asserts to check that you get the expected webpage via title check");
 
 
 
