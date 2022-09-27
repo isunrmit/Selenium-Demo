@@ -9,3 +9,5 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 .idea/
+src/test/java/au/edu/rmit/ct/HelloWorldSelenium.java
+.project

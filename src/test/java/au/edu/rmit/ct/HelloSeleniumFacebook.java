@@ -3,6 +3,7 @@ package au.edu.rmit.ct;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -61,7 +62,7 @@ class HelloSeleniumFacebook{
         assertEquals("input", tagName);
 
 
-        // Step 6. Finally close your session. But we want to pause for 3 seconds first
+        // Step 6. Finally close your session. But we want to pause for 3 seconds first. There are others that selenium provides to add pauses, but this is one of the most straightforward
 
         try {
             Thread.sleep(3000);
@@ -69,12 +70,47 @@ class HelloSeleniumFacebook{
             e.printStackTrace();
         }
         myDriver.close();
+    }
+    @Order(3)
+    @Test
+    @DisplayName("Trying to click on the login button")
+    void checkFacebookLoginButton(){
+
+        // Of course G:\\drivers\\geckodriver.exe should be replaced with
+        // the url of where you stored this.
+        // Step 1. Set system property for either chrome driver or gecko driver (for Firefox browser)
+        System.setProperty("webdriver.chrome.driver","H:\\drivers\\chromedriver.exe");
+
+        // Step 2. Instantiate the Web Driver as your driver
+
+        WebDriver myDriver = new ChromeDriver();
+
+        // Step 3. name the url you want to test.
+        String baseUrl = "http://www.facebook.com";
+
+        // Step 4. Direct your driver
+        myDriver.get(baseUrl);
+        WebElement aButton = myDriver.findElement(By.tagName("button"));
+
+        // retrieving html attribute value using getAttribute() method
+        String typeValue = aButton.getAttribute("name");
+        System.out.println("Value of name attribute: "+typeValue);
+
+        String autocompleteValue = aButton.getAttribute("class");
+        System.out.println("Value of class attribute: "+autocompleteValue);
+
+        String nonExistingAttributeValue = aButton.getAttribute("type");
+        System.out.println("Value of type attribute: "+nonExistingAttributeValue);
+
+        fail("Check if aButton is the right Button before we click it");
+
+        // This is how you click the button. But should we do more checks that it's the right button before we do this?
+        aButton.click();
 
 
 
-
-
-
+        // Finally close your session.
+        myDriver.close();
     }
 
 }
