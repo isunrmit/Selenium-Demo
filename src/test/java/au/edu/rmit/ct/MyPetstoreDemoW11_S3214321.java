@@ -29,6 +29,7 @@ class MyPetstoreDemoW11_S3214321 {
     void test01(){
         String petStoreURL = "https://petstore.octoperf.com";
         myDriver.get(petStoreURL);
+        // Do any asserts here.
     }
 
     @Test
@@ -83,13 +84,13 @@ class MyPetstoreDemoW11_S3214321 {
 
     @Test
     @Order(3)
-    @DisplayName("Check Price for another pet you might like to own at product page")
+    @DisplayName("Check Price for any other pet you might like to own at product page")
     void checkAnotherPet() {
 
         // Write the tests for these below using JUnit assertEquals and the findElements method
         fail("Task 11.4 : Check that the price is ??? using JUnit assertEquals");
         fail("Task 11.5 : Check that the product name is correct (???) for this product page");
-        fail("Task 11.6 Check that the ??? is in stock. ( > 0 )");
+        fail("Task 11.6 Check that the ??? is in stock. ( > 0 ) or maybe you should check this before Task 11.4??");
 
         /**
          * You will be asked to submit this for your Assignment 3 .
@@ -104,7 +105,7 @@ class MyPetstoreDemoW11_S3214321 {
         // When this passes I know I have the webdriver and Junit set up correctly
         String petStoreURL = "https://petstore.octoperf.com";
         myDriver.get(petStoreURL);
-        assertEquals("JPetStore Demo", myDriver.getTitle());
+        // do any sanity check here.
     }
 
     @BeforeEach
