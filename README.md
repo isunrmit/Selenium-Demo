@@ -1,3 +1,7 @@
+# Selenium W11 JPetstore Selenium Junit demo
+
+Follow the instructions per comments to complete the tasks 11.1 to 11.6
+
 # Selenium W10 My first Selenium Junit demo
 
 Read the official documentation for [Selenium Webdriver](https://www.selenium.dev/documentation/webdriver/)
