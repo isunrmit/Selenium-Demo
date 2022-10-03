@@ -111,11 +111,11 @@ class MyPetstoreDemoW11_S3214321 {
         // Here we are using * to check all elements for their enclosed value
         // <p>Like the value here</p>
 
-        // In this example we are searching only for td elements, which has exact text value
+        // In this example we are searching only for the first td element, which has exact text value - '$125.50'
         we = myDriver.findElement(By.xpath("//td[text()='$125.50']"));
 
-        // In this example we are searching only for any elements, which contains a particular string value
-        // (like a substring match)
+        // In this example we are searching only for any element, which contains a particular string value
+        // (a partial match, like a substring match)
         we = myDriver.findElement(By.xpath("//*[contains(text(),'$125')]"));
 
         System.out.println("we.toString(): " + we.toString()); // see what it looks like toString()
