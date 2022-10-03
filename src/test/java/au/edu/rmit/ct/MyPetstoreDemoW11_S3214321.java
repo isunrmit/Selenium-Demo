@@ -77,20 +77,63 @@ class MyPetstoreDemoW11_S3214321 {
         fail("Task 11.2 : Check that the product name is correct (Adult Male Chihuahua) for this product page");
         fail("Task 11.3 : Check that the adult male chihuahua is in stock. ( > 0 ) - or perhaps this should be your first check before 11.1!?");
 
-        /**
-         * You will be asked to submit this for your Assignment 3 .
-         */
     }
 
     @Test
     @Order(3)
-    @DisplayName("Check Price for any other pet you might like to own at product page")
+    @DisplayName("Check the pet name, price and check if there is stock for one pet of your choice.")
     void checkAnotherPet() {
 
         // Write the tests for these below using JUnit assertEquals and the findElements method
         fail("Task 11.4 : Check that the price is ??? using JUnit assertEquals");
         fail("Task 11.5 : Check that the product name is correct (???) for this product page");
         fail("Task 11.6 Check that the ??? is in stock. ( > 0 ) or maybe you should check this before Task 11.4??");
+
+        /**
+         * You will be asked to submit this for your Assignment 3 .
+         */
+    }
+    @Test
+    @Order(4)
+    @DisplayName("More examples with Xpath")
+    void checkChihuahua2(){
+
+        String chihuahuaURL = "https://petstore.octoperf.com/actions/Catalog.action?viewItem=&itemId=EST-26";
+        myDriver.get(chihuahuaURL);
+
+        /**
+         * If you have time you can look further with this below.
+         * Xpath has powerful functionality to find elements and values
+         * Xpath is a bit like regular expressions for html elements (DOM tree)
+         */
+
+        WebElement we;
+        // Here we are using * to check all elements for their enclosed value
+        // <p>Like the value here</p>
+
+        // In this example we are searching only for td elements, which has exact text value
+        we = myDriver.findElement(By.xpath("//td[text()='$125.50']"));
+
+        // In this example we are searching only for any elements, which contains a particular string value
+        // (like a substring match)
+        we = myDriver.findElement(By.xpath("//*[contains(text(),'$125')]"));
+
+        System.out.println("we.toString(): " + we.toString()); // see what it looks like toString()
+        System.out.println("we.getText(): " + we.getText()); // see what the text is
+
+        /**
+         * we.toString(): [[FirefoxDriver: firefox on WINDOWS (955939a2-3c3d-4cf3-b531-05dc9df88c99)] -> xpath: //*[contains(text(),'$125')]]
+         * we.getText(): $125.50
+         *
+         */
+
+    }
+
+    @Test
+    @Order(5)
+    @DisplayName("Start a menagerie! Select three fish, two cats and one third type of pet that's in stock. How much will it cost?")
+    void startAMenagerie() {
+        fail("Start a menagerie");
 
         /**
          * You will be asked to submit this for your Assignment 3 .
