@@ -13,3 +13,4 @@ src/test/java/au/edu/rmit/ct/HelloWorldSelenium.java
 .project
 *.class
 *.exe
+bin/
