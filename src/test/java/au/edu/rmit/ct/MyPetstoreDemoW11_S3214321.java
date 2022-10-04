@@ -107,15 +107,15 @@ class MyPetstoreDemoW11_S3214321 {
          * Xpath is a bit like regular expressions for html elements (DOM tree)
          */
 
-        WebElement we;
-        // Here we are using * to check all elements for their enclosed value
-        // <p>Like the value here</p>
+        WebElement we; // to store the result of our search. Of course you can also use a List of WebElements if you expect a return of many results
 
         // In this example we are searching only for the first td element, which has exact text value - '$125.50'
         we = myDriver.findElement(By.xpath("//td[text()='$125.50']"));
 
         // In this example we are searching only for any element, which contains a particular string value
         // (a partial match, like a substring match)
+        // Here we are using * to check all elements for their enclosed value
+        // <p>Like the value here</p>
         we = myDriver.findElement(By.xpath("//*[contains(text(),'$125')]"));
 
         System.out.println("we.toString(): " + we.toString()); // see what it looks like toString()
