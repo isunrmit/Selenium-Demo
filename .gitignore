@@ -14,3 +14,5 @@ src/test/java/au/edu/rmit/ct/HelloWorldSelenium.java
 *.class
 *.exe
 src/test/java/au/edu/rmit/ct/MyTest.java
+src/test/java/au/edu/rmit/ct/MyPetstoreDemoW12_soln.java
+src/test/java/au/edu/rmit/ct/MyPetstoreDemoW12_soln.java
