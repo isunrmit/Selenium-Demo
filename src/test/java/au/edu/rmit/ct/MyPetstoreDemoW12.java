@@ -28,7 +28,7 @@ class MyPetstoreDemoW12 {
 
     @Test
     @Order(1)
-    @DisplayName("Check authentication, the wrong username/password")
+    @DisplayName("1. Check unsuccessful authentication, the wrong username/password results in Signon Fail message")
     void test01() throws InterruptedException {
 
         // myDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -46,15 +46,13 @@ class MyPetstoreDemoW12 {
          * <input name="signon" type="submit" value="Login">
          */
         myDriver.findElement(By.name("username")).clear();
-        myDriver.findElement(By.name("username")).sendKeys("Testing1234"); // Enter my user name
+        myDriver.findElement(By.name("username")).sendKeys("Testing123400"); // Enter my user name
         myDriver.findElement(By.name("password")).clear();	// Enter my password
-        myDriver.findElement(By.name("password")).sendKeys("Testing1234");	// Enter my password
+        myDriver.findElement(By.name("password")).sendKeys("Testing123400");	// Enter my password
 
-        // Add sleep if you want to check browser.
+        // Add sleep
         Thread.sleep(3000);
         myDriver.findElement(By.name("signon")).click(); // Click to login
-
-
 
         /* This should fail as password expires regularly
         <ul class="messages"><li>Invalid username or password.  Signon failed.</li></ul>
@@ -64,24 +62,18 @@ class MyPetstoreDemoW12 {
         assertEquals("Invalid username or password. Signon failed.",  we.getText());
 
 
-        assertNotNull(myDriver.findElement(By.id("Catalog")), "id Content not found");
-        assertNotNull(myDriver.findElement(By.xpath("//div[@id='Catalog']")) );
-
-        assertNotNull(myDriver.findElement(By.id("Content")), "id Content not found");
-        assertNotNull(myDriver.findElement(By.xpath("//div[@id='Content']")) );
 
 
-        // Add sleep if you want to check browser.
+        // Add sleep if you want to check browser before it closes.
         Thread.sleep(3000);
-
 
         // Find by ID works fine, but you can't find it by the ID that you see on the browser as that changes
         //  with each session.
         // assertNotNull(myDriver.findElement(By.id("stripes-2052562751")), "id Content not found");
     }
     @Test
-    @Order(1)
-    @DisplayName("Check authentication, the wrong username/password")
+    @Order(2)
+    @DisplayName("2. Check authentication, the correct username/password")
     void test02()  {
         String petstore = "https://petstore.octoperf.com/actions/Account.action?signonForm=";
         myDriver.get(petstore);
@@ -90,11 +82,7 @@ class MyPetstoreDemoW12 {
         myDriver.findElement(By.name("password")).sendKeys("Testing1234");	// Enter my password
         myDriver.findElement(By.name("signon")).click(); // Click to login
 
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         /*
          * <div id="Content"><ul class="messages"><li>Invalid username or password.  Signon failed.</li></ul>
          * <div id="Catalog"><form method="post" action="/actions/Account.action">
@@ -104,17 +92,18 @@ class MyPetstoreDemoW12 {
          * <input name="signon" type="submit" value="Login">
          */
 
-        WebElement foo = new WebDriverWait(myDriver, Duration.ofSeconds(3))
-                .until(driver -> driver.findElement(By.name("q")));
-        assertEquals(foo.getText(), "Hello from JavaScript!");
 
-        // assertNotNull(myDriver.findElement(By.id("Content")), "id Content not found");
-        // assertNotNull(myDriver.findElement(By.xpath("//div[@id='Content']")) );
+        WebElement foo = new WebDriverWait(myDriver, Duration.ofSeconds(6))
+                .until(
+                        driver -> driver.findElement(By.id("WelcomeContent"))
+                );
+        assertEquals("Welcome Testing!" , foo.getText());
+
 
     }
     @Test
-    @Order(2)
-    @DisplayName("Mary gets Order number after Buying Iguana ")
+    @Order(3)
+    @DisplayName("3. Mary gets Order number after Buying Iguana ")
     void maryBuysIguana() throws InterruptedException {
         myDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         String iguanaURL = "https://petstore.octoperf.com/actions/Catalog.action?viewItem=&itemId=EST-13";
