@@ -1,3 +1,9 @@
+# Selenium W12 JPetstore Selenium Junit demo
+
+Examples of successful and unsuccessful logging in to Petstore.
+
+Follow the instructions per comments to complete the tasks 12.1 and 12.2
+
 # Selenium W11 JPetstore Selenium Junit demo
 
 Follow the instructions per comments to complete the tasks 11.1 to 11.6
